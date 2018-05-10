@@ -1,0 +1,395 @@
+* {
+  box-sizing: border-box; }
+
+body, button, input, select, textarea {
+  font-family: 'Lato', sans-serif; }
+
+label {
+  font-size: inherit;
+  color: inherit; }
+
+.float-right {
+  float: right; }
+
+.login {
+  background-image: url("../photos/BG.jpg");
+  height: 100vh;
+  background-size: 100%;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .login .login-form {
+    width: 35%;
+    height: max-content;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 2% 5%;
+    position: relative; }
+    .login .login-form .user {
+      background-color: #0088cc;
+      position: absolute;
+      top: -45px;
+      width: 90px;
+      border-radius: 50%;
+      font-size: 40px;
+      text-align: center;
+      color: white;
+      left: 50%;
+      margin-left: -50px;
+      padding: 15px; }
+    .login .login-form .title {
+      text-align: center; }
+    .login .login-form .btm {
+      font-size: 12px;
+      color: #e5e5e5;
+      vertical-align: super;
+      margin: 10px; }
+  .login .register {
+    color: white;
+    width: 443px;
+    text-align: center;
+    margin-top: 15px;
+    opacity: 0.5; }
+
+input[type="text"], input[type="password"], input[type="email"] {
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px 20px 10px 50px;
+  margin: 5px;
+  font-size: 20px; }
+
+.custom-file-input {
+  color: transparent; }
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden; }
+
+.custom-file-input::before {
+  content: 'Select some files';
+  color: white;
+  display: inline-block;
+  background: #0088cc;
+  border: 1px solid #0066cc;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  margin: 5px 5px 20px; }
+
+.custom-file-input:hover::before {
+  border-color: #0066cc; }
+
+.custom-file-input:active {
+  outline: 0; }
+
+.input-icon {
+  position: relative; }
+  .input-icon i {
+    position: absolute;
+    font-size: 25px;
+    top: 5px;
+    left: 10px; }
+
+button {
+  background-color: #0088cc;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+  margin: 5px;
+  font-size: 20px; }
+
+.check {
+  display: inline-block; }
+  .check .label {
+    margin-left: 20px; }
+  .check .check-box {
+    position: relative; }
+    .check .check-box input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer; }
+    .check .check-box .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 14px;
+      width: 14px;
+      background-color: white;
+      opacity: 1;
+      border-radius: 2px;
+      pointer-events: none; }
+      .check .check-box .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+        width: 4px;
+        height: 10px;
+        left: 4px;
+        border: #0088cc solid;
+        border-width: 0 2px 2px 0;
+        transform: rotate(35deg); }
+    .check .check-box input:checked ~ .checkmark:after {
+      display: block; }
+
+.profile {
+  display: flex;
+  min-height: 100vh;
+  background: white;
+  /*background: white linear-gradient(90deg, rgba($primary, 0.3), white , rgba($purple, 0.3));*/ }
+  .profile > div {
+    flex-grow: 1;
+    padding: 20px; }
+  .profile .info {
+    position: relative;
+    padding: 90px;
+    min-width: 30vw; }
+    .profile .info .profile-image {
+      background-color: #0088cc;
+      width: 90px;
+      border-radius: 50%;
+      font-size: 40px;
+      text-align: center;
+      color: white;
+      padding: 15px;
+      margin: auto; }
+    .profile .info ul {
+      text-align: center; }
+      .profile .info ul li {
+        padding: 5px;
+        border: 1px solid #e5e5e5; }
+        .profile .info ul li.active {
+          background-color: #0088cc;
+          color: white;
+          border: 1px solid #0066cc; }
+        .profile .info ul li:first-child {
+          border-radius: 2px 2px 0 0; }
+        .profile .info ul li:last-child {
+          border-radius: 0 0 2px 2px; }
+  .profile .products {
+    display: flex;
+    flex-wrap: wrap; }
+  .profile .product {
+    border: 1px #e5e5e5 solid;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 1px 1px #e5e5e5;
+    margin: 0 20px 20px 0;
+    width: 30vw; }
+    .profile .product .photo {
+      width: 100px;
+      height: 6em;
+      display: inline-block;
+      margin-right: 10px;
+      overflow: hidden;}
+      .profile .product .photo img {
+        width: 100%; }
+    .profile .product .description {
+      float: right;
+      line-height: 1em;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      max-width: 70%;
+      text-align: justify; }
+    .profile .product .like-rate {
+      margin: 10px 0;
+      font-size: 20px; }
+    .profile .product .icon-heart {
+      color: #ED4956; }
+    .profile .product .icon-star {
+      color: #e5e5e5; }
+      .profile .product .icon-star.active {
+        color: #FFC000; }
+  .profile .more {
+    color: #0088cc;
+    float: right; }
+  .profile .edit-form {
+    padding: 90px;
+    display: flex;
+    align-items: center;
+    font-size: 18px; }
+    .profile .edit-form form {
+      width: 50%; }
+      .profile .edit-form form input[type="text"], .profile .edit-form form input[type="password"], .profile .edit-form form input[type="email"] {
+        border-bottom: 1px solid #0088cc;
+        border-radius: 0;
+        margin-bottom: 20px;
+        padding: 10px 20px; }
+
+.product-add {
+  display: flex;
+  background: white;
+  min-height: 100vh; }
+  .product-add > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .product-add .carousel {
+    display: none; }
+  .product-add .carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    -webkit-perspective: 500px;
+    perspective: 500px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 0% 50%;
+    transform-origin: 0% 50%; }
+    .product-add .carousel .carousel-item {
+      visibility: hidden;
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      top: 0;
+      left: 0; }
+      .product-add .carousel .carousel-item > img {
+        width: 100%;
+        border-style: none; }
+  .product-add .add-form {
+    padding: 20px 60px 20px 20px; }
+  .product-add input[type="text"], .product-add input[type="password"], .product-add input[type="email"] {
+    border-bottom: 1px solid #0088cc;
+    border-radius: 0;
+    margin-bottom: 20px;
+    padding: 10px 20px; }
+
+.product-view {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; }
+  .product-view .card {
+    width: 30%;
+    background: white;
+    border: 1px #e5e5e5 solid;
+    border-radius: 5px;
+    margin: 1%; }
+    .product-view .card .header {
+      overflow: hidden;
+      height: 300px; }
+      .product-view .card .header img {
+        width: 100%; }
+    .product-view .card .body {
+      padding: 20px; }
+      .product-view .card .body .title, .product-view .card .body .price {
+        font-weight: bold; }
+      .product-view .card .body .description {
+        line-height: 1em;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        height: 4em; }
+    .product-view .card .footer {
+      padding: 20px;
+      background-color: #e5e5e5; }
+      .product-view .card .footer .rate .icon-star.active {
+        color: #FFC000; }
+
+nav {
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3; }
+  nav li {
+    float: left; }
+    nav li.right {
+      float: right; }
+    nav li a {
+      display: block;
+      color: #666;
+      text-align: center;
+      padding: 14px 16px; }
+      nav li a.active {
+        color: white;
+        background-color: #0088cc; }
+
+.single-product {
+  display: flex;
+  justify-content: space-around; }
+  .single-product .slider, .single-product .info {
+    width: 45%; }
+  .single-product .slider {
+    padding: 20px;
+    border-radius: 75px;
+    max-height: 800px;
+    overflow: hidden; }
+  .single-product .info {
+    align-self: center; }
+  .single-product .carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    -webkit-perspective: 500px;
+    perspective: 500px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 0% 50%;
+    transform-origin: 0% 50%;
+    top: 0;
+    left: 0; }
+    .single-product .carousel .carousel-item {
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+      position: absolute;
+      top: 0;
+      left: 0; }
+      .single-product .carousel .carousel-item > img {
+        width: 100%;
+        border-style: none; }
+    .single-product .carousel .indicators {
+      position: absolute;
+      text-align: center;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0; }
+      .single-product .carousel .indicators .indicator-item {
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        height: 8px;
+        width: 8px;
+        margin: 24px 4px;
+        background-color: rgba(255, 255, 255, 0.5);
+        -webkit-transition: background-color .3s;
+        transition: background-color .3s;
+        border-radius: 50%; }
+        .single-product .carousel .indicators .indicator-item.active {
+          background-color: #fff; }
+  .single-product .card {
+    background: white;
+    border: 1px #e5e5e5 solid;
+    border-radius: 5px;
+    margin: 1%; }
+    .single-product .card .body {
+      padding: 20px; }
+      .single-product .card .body .title {
+        font-size: 36px; }
+      .single-product .card .body .price {
+        font-size: 28px; }
+      .single-product .card .body .description {
+        font-size: 28px; }
+    .single-product .card .footer {
+      padding: 20px;
+      background-color: #e5e5e5; }
+      .single-product .card .footer .rate .icon-star.active {
+        color: #FFC000; }
+  .delete-product {
+    position: absolute;
+    right: 30px; }
+    .delete-product button {
+       background-color: indianred;
+    }
+
+/*# sourceMappingURL=main.css.map */

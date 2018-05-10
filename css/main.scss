@@ -1,0 +1,494 @@
+$primary: #0088cc;
+$purple: #cc88dd;
+$darker: #0066cc;
+$gray: #e5e5e5;
+$red: #ED4956;
+$yellow: #FFC000;
+
+* {
+  box-sizing: border-box;
+}
+
+body, button, input, select, textarea {
+  font-family: 'Lato', sans-serif;
+}
+
+label {
+  font-size: inherit;
+  color: inherit;
+}
+
+.float-right {
+  float: right;
+}
+
+.login {
+  background-image: url("../photos/BG.jpg");
+  height: 100vh;
+  background-size: 100%;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .login-form {
+    width: 35%;
+    height: max-content;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 2% 5%;
+    position: relative;
+    .user {
+      background-color: $primary;
+      position: absolute;
+      top: -45px;
+      width: 90px;
+      border-radius: 50%;
+      font-size: 40px;
+      text-align: center;
+      color: white;
+      left: 50%;
+      margin-left: -50px;
+      padding: 15px;
+    }
+    .title {
+      text-align: center;
+    }
+    .btm {
+      font-size: 12px;
+      color: $gray;
+      vertical-align: super;
+      margin: 10px;
+    }
+  }
+  .register {
+    color: white;
+    width: 443px;
+    text-align: center;
+    margin-top: 15px;
+    opacity: 0.5;
+  }
+}
+
+
+input[type="text"], input[type="password"], input[type="email"] {
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px 20px 10px 50px;
+  margin: 5px;
+  font-size: 20px;
+}
+.custom-file-input {
+  color: transparent;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Select some files';
+  color: white;
+  display: inline-block;
+  background: $primary;
+  border: 1px solid $darker;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  margin: 5px 5px 20px;
+}
+.custom-file-input:hover::before {
+  border-color: $darker;
+}
+.custom-file-input:active {
+  outline: 0;
+}
+
+.input-icon {
+  position: relative;
+  i{
+    position: absolute;
+    font-size: 25px;
+    top: 5px;
+    left: 10px;
+  }
+}
+
+button {
+  background-color: $primary;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+  margin: 5px;
+  font-size: 20px;
+}
+
+.check {
+  display: inline-block;
+  .label {
+    margin-left: 20px;
+  }
+  .check-box {
+    position: relative;
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 14px;
+      width: 14px;
+      background-color: white;
+      opacity: 1;
+      border-radius: 2px;
+      pointer-events: none;
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+        width: 4px;
+        height: 10px;
+        left: 4px;
+        border: $primary solid;
+        border-width: 0 2px 2px 0;
+        transform: rotate(35deg);
+      }
+    }
+    input:checked ~ .checkmark:after {
+      display: block; }
+  }
+}
+
+.profile {
+  display: flex;
+  min-height: 100vh;
+  background: white;
+  /*background: white linear-gradient(90deg, rgba($primary, 0.3), white , rgba($purple, 0.3));*/
+  > div {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  .info {
+    position: relative;
+    padding: 90px;
+    min-width: 30vw;
+    .profile-image {
+      background-color: $primary;
+      width: 90px;
+      border-radius: 50%;
+      font-size: 40px;
+      text-align: center;
+      color: white;
+      padding: 15px;
+      margin: auto;
+    }
+    ul {
+      text-align: center;
+      li {
+        padding: 5px;
+        border: 1px solid $gray;
+        &.active {
+          background-color: $primary;
+          color: white;
+          border: 1px solid $darker;
+        }
+        &:first-child {
+          border-radius: 2px 2px 0 0;
+        }
+        &:last-child {
+          border-radius: 0 0 2px 2px;
+        }
+      }
+    }
+  }
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .product {
+    border: 1px $gray solid;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 1px 1px $gray;
+    margin: 0 20px 20px 0;
+    max-width: 30vw;
+    .photo {
+      width: 100px;
+      height: 6em;
+      display: inline-block;
+      margin-right: 10px;
+      img {
+        width: 100%;
+      }
+    }
+    .description {
+      float: right;
+      line-height: 1em;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      max-width: 70%;
+      text-align: justify;
+    }
+    .like-rate {
+      margin: 10px 0;
+      font-size: 20px;
+    }
+    .icon-heart {
+      color: $red;
+    }
+    .icon-star {
+      color: $gray;
+      &.active {
+        color: $yellow;
+      }
+    }
+  }
+  .more {
+    color: $primary;
+    float: right;
+  }
+  .edit-form {
+    padding: 90px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    form {
+      width: 50%;
+      input[type="text"], input[type="password"], input[type="email"] {
+        border-bottom: 1px solid $primary;
+        border-radius: 0;
+        margin-bottom: 20px;
+        padding: 10px 20px;
+      }
+    }
+  }
+}
+
+.product-add {
+  display: flex;
+  background: white;
+  min-height: 100vh;
+  & > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .carousel {
+    display: none;
+  }
+  .carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    -webkit-perspective: 500px;
+    perspective: 500px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 0% 50%;
+    transform-origin: 0% 50%;
+    .carousel-item {
+      visibility: hidden;
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      & >img {
+        width: 100%;
+        border-style: none;
+      }
+    }
+  }
+
+  .add-form {
+    padding: 20px 60px 20px 20px;
+  }
+  input[type="text"], input[type="password"], input[type="email"] {
+    border-bottom: 1px solid $primary;
+    border-radius: 0;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+  }
+}
+
+
+.product-view {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  .card {
+    width: 30%;
+    background: white;
+    border: 1px $gray solid;
+    border-radius: 5px;
+    margin: 1%;
+    .header {
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+      height: 300px;
+    }
+    .body {
+      padding: 20px;
+      .title, .price {
+        font-weight: bold;
+      }
+      .description {
+        line-height: 1em;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        height: 4em;
+      }
+    }
+    .footer {
+      padding: 20px;
+      background-color: $gray;
+      .rate {
+        .icon-star {
+          &.active {
+            color: $yellow;
+          }
+        }
+      }
+    }
+  }
+}
+
+nav {
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+  li {
+    float: left;
+    &.right {
+      float: right;
+    }
+    a {
+      display: block;
+      color: #666;
+      text-align: center;
+      padding: 14px 16px;
+      &.active {
+        color: white;
+        background-color: $primary
+      }
+    }
+  }
+}
+
+.single-product {
+  display: flex;
+  justify-content: space-around;
+  .slider, .info {
+    width: 45%;
+  }
+  .slider {
+    padding: 20px;
+    border-radius: 75px;
+    max-height: 800px;
+    overflow: hidden;
+  }
+  .info {
+    align-self: center;
+  }
+  .carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    -webkit-perspective: 500px;
+    perspective: 500px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 0% 50%;
+    transform-origin: 0% 50%;
+    top: 0;
+    left: 0;
+    .carousel-item {
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      & >img {
+        width: 100%;
+        border-style: none;
+      }
+    }
+    .indicators {
+      position: absolute;
+      text-align: center;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+      .indicator-item {
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        height: 8px;
+        width: 8px;
+        margin: 24px 4px;
+        background-color: blue;
+        -webkit-transition: background-color .3s;
+        transition: background-color .3s;
+        border-radius: 50%;
+        &.active {
+          background-color: blue;
+        }
+      }
+    }
+  }
+
+  .card {
+    background: white;
+    border: 1px $gray solid;
+    border-radius: 5px;
+    margin: 1%;
+    .body {
+      padding: 20px;
+      .title{
+        font-size: 36px;
+      }
+      .price {
+        font-size: 28px;
+      }
+      .description {
+        font-size: 28px;
+      }
+    }
+    .footer {
+      padding: 20px;
+      background-color: $gray;
+      .rate {
+        .icon-star {
+          &.active {
+            color: $yellow;
+          }
+        }
+      }
+    }
+  }
+}
+
+.delete-product {
+  position: absolute;
+  right: 30px;
+  button {
+    background-color: indianred;
+  }
+}
