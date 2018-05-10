@@ -22,6 +22,7 @@ if(isset($_POST['submit'])){
 
 ?>
 <title>Signup</title>
+<div></div>
 <div class="login">
     <div class="login-form">
         <div class="user">
